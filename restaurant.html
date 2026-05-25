@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>炭火焼肉 和牛亭 | 福岡市中央区</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#1a1a1a',
+            gold: '#c9a84c',
+            'gold-light': '#e2c47a',
+            'dark-secondary': '#2a2a2a',
+            'dark-tertiary': '#333333',
+          },
+          fontFamily: {
+            serif: ['"Noto Serif JP"', 'serif'],
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { background-color: #1a1a1a; color: #f5f0e8; font-family: 'Noto Sans JP', sans-serif; }
+    .gold-text { color: #c9a84c; }
+    .gold-border { border-color: #c9a84c; }
+    .gold-bg { background-color: #c9a84c; }
+    .section-divider { border-color: #c9a84c; opacity: 0.4; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(201,168,76,0.2); }
+    .hero-overlay { background: linear-gradient(to bottom, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.7) 60%, rgba(26,26,26,0.95) 100%); }
+    .gold-gradient { background: linear-gradient(135deg, #c9a84c, #e2c47a, #c9a84c); }
+    .btn-primary { background: linear-gradient(135deg, #c9a84c, #e2c47a); color: #1a1a1a; font-weight: 700; transition: all 0.3s ease; }
+    .btn-primary:hover { background: linear-gradient(135deg, #e2c47a, #c9a84c); box-shadow: 0 6px 24px rgba(201,168,76,0.4); transform: translateY(-2px); }
+    .btn-outline { border: 2px solid #c9a84c; color: #c9a84c; font-weight: 600; transition: all 0.3s ease; }
+    .btn-outline:hover { background-color: #c9a84c; color: #1a1a1a; transform: translateY(-2px); }
+    .section-title::after { content: ''; display: block; width: 60px; height: 2px; background: #c9a84c; margin: 12px auto 0; }
+    .review-card { background: linear-gradient(135deg, #2a2a2a, #222); border: 1px solid rgba(201,168,76,0.25); }
+    .feature-icon { width: 64px; height: 64px; border: 2px solid #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    nav { backdrop-filter: blur(10px); background: rgba(26,26,26,0.9); }
+  </style>
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav class="fixed top-0 w-full z-50 border-b border-gold border-opacity-20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="font-serif text-xl gold-text font-bold tracking-widest">炭火焼肉 和牛亭</div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="#features" class="hover:text-gold-light transition-colors">こだわり</a>
+        <a href="#courses" class="hover:text-gold-light transition-colors">コース</a>
+        <a href="#rooms" class="hover:text-gold-light transition-colors">個室</a>
+        <a href="#access" class="hover:text-gold-light transition-colors">アクセス</a>
+        <a href="#reserve" class="btn-primary px-5 py-2 rounded text-sm">ご予約</a>
+      </div>
+      <a href="#reserve" class="md:hidden btn-primary px-4 py-2 rounded text-sm">予約</a>
+    </div>
+  </nav>
+
+  <!-- ヒーローセクション -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <img src="https://placehold.co/1920x1080/1a1a1a/c9a84c?text=炭火焼肉+和牛亭" alt="和牛亭 メインビジュアル" class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <p class="gold-text text-sm md:text-base tracking-[0.3em] mb-6 font-light">CHARCOAL GRILLED WAGYU</p>
+      <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
+        至福の一皿を、<br class="md:hidden">あなたに
+      </h1>
+      <div class="w-20 h-px mx-auto mb-6" style="background: #c9a84c;"></div>
+      <p class="text-gray-300 text-base md:text-lg mb-10 leading-relaxed font-light">
+        A5ランク黒毛和牛を産地直送。<br>
+        特別な夜に、忘れられない記憶を。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#reserve" class="btn-primary px-10 py-4 rounded text-base inline-block">
+          ご予約はこちら
+        </a>
+        <a href="#courses" class="btn-outline px-10 py-4 rounded text-base inline-block">
+          コースを見る
+        </a>
+      </div>
+      <p class="text-gray-500 text-xs mt-8 tracking-widest">福岡市中央区 ｜ 完全個室完備</p>
+    </div>
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-gold border-opacity-50 rounded-full flex justify-center pt-2">
+        <div class="w-1 h-3 gold-bg rounded-full"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- こだわりセクション -->
+  <section id="features" class="py-24 px-6" style="background-color: #111;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">OUR COMMITMENT</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">三つのこだわり</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-8 rounded-lg card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <div class="feature-icon">
+            <svg class="w-8 h-8 gold-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl gold-text font-bold mb-4">極上の肉質</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">厳選したA5ランク黒毛和牛を産地直送でお届け。サシの入り方、香り、とろける食感をご堪能ください。</p>
+        </div>
+        <div class="text-center p-8 rounded-lg card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <div class="feature-icon">
+            <svg class="w-8 h-8 gold-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl gold-text font-bold mb-4">洗練された空間</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">完全個室を完備。落ち着いたダークトーンの内装と温かな照明が、特別なひとときを演出します。</p>
+        </div>
+        <div class="text-center p-8 rounded-lg card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <div class="feature-icon">
+            <svg class="w-8 h-8 gold-text" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-xl gold-text font-bold mb-4">心からのおもてなし</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">接待・記念日・大切な方へのご褒美に。お客様一人ひとりのご要望に寄り添う、細やかなサービスをお約束します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- おすすめコースセクション -->
+  <section id="courses" class="py-24 px-6" style="background-color: #1a1a1a;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">COURSE MENU</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">おすすめコース</h2>
+        <p class="text-gray-400 mt-6 text-sm">すべてのコースに前菜・スープ・デザートが含まれます</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- スタンダードコース -->
+        <div class="rounded-lg overflow-hidden card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.2);">
+          <div class="p-1" style="background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));"></div>
+          <div class="p-8">
+            <p class="gold-text text-xs tracking-[0.2em] mb-2 font-light">STANDARD</p>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">黒毛和牛コース</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="gold-text text-3xl font-bold">¥8,800</span>
+              <span class="text-gray-500 text-sm">/ お一人様（税込）</span>
+            </div>
+            <hr class="section-divider mb-6">
+            <ul class="space-y-2 text-sm text-gray-400 mb-8">
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 前菜盛り合わせ</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> A4黒毛和牛 4種盛り</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 特選カルビ・ロース</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> ビビンバ or 石焼きご飯</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> デザート</li>
+            </ul>
+            <a href="#reserve" class="btn-outline w-full py-3 rounded text-center text-sm block">予約する</a>
+          </div>
+        </div>
+
+        <!-- プレミアムコース -->
+        <div class="rounded-lg overflow-hidden card-hover relative" style="border: 2px solid #c9a84c;">
+          <div class="absolute top-0 right-0 gold-bg text-dark text-xs font-bold px-3 py-1 rounded-bl">人気No.1</div>
+          <div class="p-8" style="background-color: #222;">
+            <p class="gold-text text-xs tracking-[0.2em] mb-2 font-light">PREMIUM</p>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">特選和牛コース</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="gold-text text-3xl font-bold">¥13,200</span>
+              <span class="text-gray-500 text-sm">/ お一人様（税込）</span>
+            </div>
+            <hr class="section-divider mb-6">
+            <ul class="space-y-2 text-sm text-gray-300 mb-8">
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 前菜・お造り盛り合わせ</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> A5黒毛和牛 5種盛り</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 特上カルビ・サーロイン</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 希少部位 1種</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 〆の一品 ＋ デザート</li>
+            </ul>
+            <a href="#reserve" class="btn-primary w-full py-3 rounded text-center text-sm block">予約する</a>
+          </div>
+        </div>
+
+        <!-- 最高級コース -->
+        <div class="rounded-lg overflow-hidden card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.2);">
+          <div class="p-1" style="background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));"></div>
+          <div class="p-8">
+            <p class="gold-text text-xs tracking-[0.2em] mb-2 font-light">LUXURY</p>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">極上和牛コース</h3>
+            <div class="flex items-baseline gap-1 mb-6">
+              <span class="gold-text text-3xl font-bold">¥19,800</span>
+              <span class="text-gray-500 text-sm">/ お一人様（税込）</span>
+            </div>
+            <hr class="section-divider mb-6">
+            <ul class="space-y-2 text-sm text-gray-400 mb-8">
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> シェフ特製前菜フルコース</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> A5ランク黒毛和牛 7種盛り</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> シャトーブリアン</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> フォアグラ一品</li>
+              <li class="flex items-center gap-2"><span class="gold-text">✓</span> 〆 ＋ 特製デザートプレート</li>
+            </ul>
+            <a href="#reserve" class="btn-outline w-full py-3 rounded text-center text-sm block">予約する</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- メニューハイライト -->
+  <section id="menu" class="py-24 px-6" style="background-color: #111;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">MENU HIGHLIGHT</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">厳選メニュー</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=シャトーブリアン" alt="シャトーブリアン" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">シャトーブリアン</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=特上カルビ" alt="特上カルビ" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">特上カルビ</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=A5ロース" alt="A5ロース" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">A5ロース</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=タン塩" alt="タン塩" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">厚切りタン塩</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=ザブトン" alt="ザブトン" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">ザブトン（希少部位）</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover group">
+          <div class="relative">
+            <img src="https://placehold.co/600x400/2a2a2a/c9a84c?text=デザート" alt="デザート" class="w-full object-cover aspect-square group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <p class="absolute bottom-3 left-3 text-white text-sm font-bold">特製デザートプレート</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 個室紹介セクション -->
+  <section id="rooms" class="py-24 px-6" style="background-color: #1a1a1a;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">PRIVATE ROOMS</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">完全個室のご案内</h2>
+        <p class="text-gray-400 mt-6 text-sm">全室完全個室。大切なひとときを、プライベートな空間でお楽しみください。</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="rounded-lg overflow-hidden card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <img src="https://placehold.co/600x400/1e1e1e/c9a84c?text=2名様用個室" alt="2名様用個室" class="w-full object-cover h-48">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-serif text-xl font-bold text-white">2名様用個室</h3>
+              <span class="gold-text text-sm border border-gold border-opacity-40 px-3 py-1 rounded-full text-xs">COUPLE</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">記念日やデートに最適。ふたりだけの特別な時間を、静かな空間で。シャンパンサービスもご用意できます。</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <img src="https://placehold.co/600x400/1e1e1e/c9a84c?text=4名様用個室" alt="4名様用個室" class="w-full object-cover h-48">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-serif text-xl font-bold text-white">4名様用個室</h3>
+              <span class="gold-text text-sm border border-gold border-opacity-40 px-3 py-1 rounded-full text-xs">SMALL</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">接待・会食に最適な4名個室。ゆったりとしたテーブルレイアウトで、ビジネスのお話もスムーズに。</p>
+          </div>
+        </div>
+        <div class="rounded-lg overflow-hidden card-hover" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <img src="https://placehold.co/600x400/1e1e1e/c9a84c?text=8名様用個室" alt="8名様用個室" class="w-full object-cover h-48">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-serif text-xl font-bold text-white">8名様用個室</h3>
+              <span class="gold-text text-sm border border-gold border-opacity-40 px-3 py-1 rounded-full text-xs">PARTY</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed">会社の宴会・グループ接待に。プロジェクターの設置も可能。特別なセッティングもご相談ください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section id="reviews" class="py-24 px-6" style="background-color: #111;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">CUSTOMER VOICE</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">お客様の声</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="review-card rounded-lg p-8">
+          <div class="flex gap-1 mb-4">
+            <span class="gold-text text-lg">★★★★★</span>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">「接待で利用しました。A5和牛の質はもちろん、スタッフの方の気遣いが素晴らしく、取引先の方にも大変喜んでいただけました。また必ず伺います。」</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center text-dark font-bold text-sm">T</div>
+            <div>
+              <p class="text-white text-sm font-bold">T.M様</p>
+              <p class="text-gray-500 text-xs">40代・会社役員</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card rounded-lg p-8">
+          <div class="flex gap-1 mb-4">
+            <span class="gold-text text-lg">★★★★★</span>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">「結婚記念日に2名個室を予約しました。シャンパンで乾杯してから特上コースを堪能。肉の質が段違いで、口の中でとろけました。妻も大感激！」</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center text-dark font-bold text-sm">K</div>
+            <div>
+              <p class="text-white text-sm font-bold">K.Y様</p>
+              <p class="text-gray-500 text-xs">30代・会社員</p>
+            </div>
+          </div>
+        </div>
+        <div class="review-card rounded-lg p-8">
+          <div class="flex gap-1 mb-4">
+            <span class="gold-text text-lg">★★★★★</span>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">「福岡で一番好きな焼肉店です。産地直送のこだわりが肉の味に出ていて、シャトーブリアンは感動の一言。個室の雰囲気も最高でした。」</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center text-dark font-bold text-sm">A</div>
+            <div>
+              <p class="text-white text-sm font-bold">A.S様</p>
+              <p class="text-gray-500 text-xs">50代・経営者</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- アクセス・営業時間 -->
+  <section id="access" class="py-24 px-6" style="background-color: #1a1a1a;">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="gold-text text-sm tracking-[0.3em] mb-3 font-light">ACCESS & HOURS</p>
+        <h2 class="section-title font-serif text-3xl md:text-4xl font-bold text-white">アクセス・営業時間</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-lg overflow-hidden" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+          <img src="https://placehold.co/800x400/1e1e1e/c9a84c?text=地図" alt="地図" class="w-full h-56 object-cover opacity-70">
+          <div class="p-6">
+            <h3 class="gold-text font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              所在地
+            </h3>
+            <p class="text-gray-300 text-sm mb-2">〒810-0000</p>
+            <p class="text-gray-300 text-sm mb-4">福岡県福岡市中央区天神2丁目X-XX<br>和牛亭ビル 3F</p>
+            <p class="text-gray-500 text-xs">地下鉄空港線「天神駅」より徒歩3分</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="rounded-lg p-6" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+            <h3 class="gold-text font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              営業時間
+            </h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-400">月〜金</span>
+                <span class="text-white">17:00 – 23:00（L.O. 22:00）</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">土・日・祝</span>
+                <span class="text-white">11:30 – 23:00（L.O. 22:00）</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-lg p-6" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+            <h3 class="gold-text font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+              定休日
+            </h3>
+            <p class="text-gray-300 text-sm">毎週火曜日（祝日の場合は翌水曜日）</p>
+          </div>
+          <div class="rounded-lg p-6" style="background-color: #1e1e1e; border: 1px solid rgba(201,168,76,0.15);">
+            <h3 class="gold-text font-bold mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              お電話
+            </h3>
+            <p class="text-white text-xl font-bold tracking-wider">092-XXX-XXXX</p>
+            <p class="text-gray-500 text-xs mt-1">受付時間：11:00 – 22:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 予約CTAセクション -->
+  <section id="reserve" class="py-28 px-6 relative overflow-hidden" style="background-color: #111;">
+    <div class="absolute inset-0 opacity-5">
+      <img src="https://placehold.co/1920x600/c9a84c/1a1a1a?text=" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto text-center">
+      <p class="gold-text text-sm tracking-[0.3em] mb-4 font-light">RESERVATION</p>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        特別なひとときを、<br>ご予約ください
+      </h2>
+      <div class="w-20 h-px mx-auto mb-8" style="background: #c9a84c;"></div>
+      <p class="text-gray-400 mb-12 text-sm leading-relaxed">
+        記念日・接待・大切な方へのおもてなし。<br>
+        ご要望をお気軽にご相談ください。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+        <a href="tel:092-XXX-XXXX" class="btn-primary px-10 py-5 rounded-lg text-base font-bold inline-flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          電話で予約する
+        </a>
+        <a href="#" class="btn-outline px-10 py-5 rounded-lg text-base font-bold inline-flex items-center justify-center gap-3">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          ネット予約する
+        </a>
+      </div>
+      <p class="text-gray-600 text-xs mt-8">当日予約は電話にてお問い合わせください</p>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="py-12 px-6" style="background-color: #0d0d0d; border-top: 1px solid rgba(201,168,76,0.15);">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <p class="font-serif text-xl gold-text font-bold tracking-widest mb-2">炭火焼肉 和牛亭</p>
+          <p class="text-gray-600 text-xs">福岡県福岡市中央区天神2丁目X-XX 和牛亭ビル 3F</p>
+        </div>
+        <div class="flex gap-8 text-xs text-gray-600">
+          <a href="#features" class="hover:text-gold-light transition-colors">こだわり</a>
+          <a href="#courses" class="hover:text-gold-light transition-colors">コース</a>
+          <a href="#rooms" class="hover:text-gold-light transition-colors">個室</a>
+          <a href="#access" class="hover:text-gold-light transition-colors">アクセス</a>
+          <a href="#reserve" class="hover:text-gold-light transition-colors">予約</a>
+        </div>
+      </div>
+      <hr class="my-8 section-divider">
+      <p class="text-center text-gray-700 text-xs">© 2026 炭火焼肉 和牛亭. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- スムーズスクロール -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 70;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
